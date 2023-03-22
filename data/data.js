@@ -6,32 +6,32 @@ let data = {
     ],
     "offer": [
         {
-            "h1": "PAPA UTAI",
+            "h1": "Learn more about ...",
         }
     ],
     "ourTeam": [
         {
-            "h1": "chuj ci w dupaj",
+            "h1": "Your feature team",
         }
     ],
     "projects": [
         {
-            "h1": "menel;",
+            "h1": "Projects",
         }
     ],
     "ourAchievements": [
         {
-            "h1": "gfgrgr",
+            "h1": "Achievements",
         }
     ],
     "partners": [
         {
-            "h1": "ewfwef",
+            "h1": "Partners",
         }
     ],
     "contact": [
         {
-            "h1": "bfbfbI",
+            "h1": "Contact",
         }
     ]
 }
