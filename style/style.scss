@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,700;1,200;1,500&family=Staatliches&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.page {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: scroll 0.5s;
+    font-family: 'Poppins', sans-serif;
+    color: White;
+
+    &__main {
+        overflow-x: hidden;
+    }
+
+    .logo {
+        background-image: url(../img/Logo.png);
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        top: -80px;
+        left: -30px;
+        position: fixed;
+    }
+
+    .burgerMenu {
+        width: 30px;
+        height: 3px;
+        background: white;
+        right: 0px;
+        top: 20px;
+        cursor: pointer;
+        position: fixed;
+        transform: translateX(-50%);
+        border-radius: 5px;
+        z-index: 2;
+        transition: all 0.5s ease-in-out;
+
+        &--active {
+            transition: transform 0.2s ease-in-out;
+            background: transparent;
+
+            &::after {
+                transform: rotate(45deg) translateY(350%);
+
+            }
+
+            &::before {
+                transform: rotate(-45deg) translateY(-350%);
+            }
+        }
+
+        &::after {
+            transition: transform 0.2s ease-in-out;
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: white;
+            position: absolute;
+            top: -7px;
+            border-radius: 5px;
+        }
+
+        &::before {
+            transition: transform 0.2s ease-in-out;
+            content: '';
+            width: inherit;
+            height: inherit;
+            background: white;
+            position: absolute;
+            top: 7px;
+            border-radius: 5px;
+        }
+    }
+
+    &__container {
+        position: relative;
+        right: 5%;
+        width: 100%;
+        height: 500px;
+        top: 30%;
+        display: flex;
+        justify-content: right;
+
+        &--left {
+            left: 5%;
+            justify-content: left;
+        }
+    }
+
+    &__title {
+        font-family: 'Staatliches', cursive;
+        font-size: calc(3rem + 2.5vw);
+        bottom: 35%;
+        text-align: right;
+        position: absolute;
+        width: 80%;
+
+        &--left {
+            text-align: left;
+        }
+    }
+
+    &__btn {
+        width: 120px;
+        height: 50px;
+        top: 60%;
+        background: transparent;
+        color: white;
+        position: relative;
+        border: 1px solid white;
+        cursor: pointer;
+        font-size: 20px;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            background: white;
+
+            a {
+                color: black;
+            }
+        }
+    }
+
+    &__link {
+        transition: all 0.5s ease-in-out;
+        color: white;
+        text-decoration: none;
+    }
+
+
+    &__section {
+        width: 100%;
+        height: 110vh;
+        background-image: url(../img/rocket-launch.jpg);
+        background-position: 40% 25%;
+        background-attachment: fixed;
+
+        &:nth-child(2) {
+            background-image: url(../img/earth2.jpg);
+            background-position: 35% 20%;
+        }
+
+        &:nth-child(3) {
+            background-image: url(../img/observatory.jpg);
+            background-position: 30% 100%;
+        }
+
+        &:nth-child(4) {
+            background-image: url(../img/aurora.jpg);
+            background-position: center bottom;
+        }
+
+        &:nth-child(5) {
+            background-image: url(../img/source.jpg);
+            background-position: 15% center;
+        }
+
+        &:nth-child(6) {
+            background-image: url(../img/galaxy.jpg);
+            background-position: center center;
+        }
+
+    }
+
+    .header {
+        position: absolute;
+    }
+
+    .backBtn {
+        width: 50px;
+        height: 50px;
+        background: white;
+        position: fixed;
+        bottom: 30px;
+        right: -50px;
+        text-align: center;
+        font-size: 38px;
+        transition: all 0.5s;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        z-index: 1;
+
+    }
+
+    .belt {
+        position: absolute;
+        background: white;
+        height: 2px;
+        left: -50px;
+        top: 3.7vh;
+        transition: 0.2s;
+        display: none;
+    }
+
+    .navBar {
+        height: 100vh;
+        width: 320px;
+        position: fixed;
+        background: black;
+        margin: 0;
+        padding: 0;
+        z-index: 1;
+        right: -100%;
+        transition: all 0.5s ease-in-out;
+
+        &--active {
+            right: 0%;
+        }
+
+        &__list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__item {
+            margin-right: 30px;
+            margin-top: 20px;
+            font-size: 18px;
+            transition: all 0.5s;
+            text-align: right;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        &__link {
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .footer {
+        height: 100px;
+        background: #000;
+        width: 100%;
+
+        .company {
+            color: gray;
+        }
+
+        &__list {
+            width: 100%;
+            height: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            font-size: 10px;
+            transition: all 0.5s;
+            text-align: center;
+
+        }
+
+        &__link {
+            font-size: calc(1em + 0.2vw);
+            text-decoration: none;
+            color: white;
+            transition: color 0.5s ease-in-out;
+            margin-left: 10px;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+
+    .page {
+        .logo {
+            top: -50px;
+            left: 0px;
+        }
+
+        .belt {
+
+            display: block;
+            top: 62px;
+        }
+
+        &__burgerMenu {
+            display: none;
+
+        }
+
+        &__title {
+            font-size: 68px;
+            width: 30%;
+        }
+
+        .navBar {
+            background: transparent;
+            height: 100px;
+            width: 100vw;
+            position: fixed;
+            top: 10px;
+            left: 150px;
+            z-index: 1;
+
+            &--active {
+                right: 0%;
+            }
+
+            &__list {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+
+            }
+
+            &__item {
+                font-size: 18px;
+                transition: all 0.5s;
+                border-bottom: none;
+            }
+
+            &__link {
+                text-decoration: none;
+                color: white;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .page {
+        &__title {
+            font-size: 78px;
+        }
+    }
+}
